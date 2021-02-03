@@ -22,6 +22,13 @@ def captured_output():
 
 # implement this function
 def is_perfect(n):
+    sum = 0
+    for x in range(1,n):
+        if n % x == 0
+            sum += x
+    if sum == n
+        return true
+    return false
     pass
 
 # (3 points)
@@ -40,6 +47,11 @@ def test1():
 
 # implement this function
 def multiples_of_3_and_5(n):
+    sum = 0
+    for x in range(1,n):
+        if (x % 3 == 0 or x % 5 == 0):
+            sum += x
+    return sum
     pass
 
 # (3 points)
@@ -53,6 +65,13 @@ def test2():
 # EXERCISE 3
 #################################################################################
 def integer_right_triangles(p):
+    temp = 0
+    for a in range(1, p):
+        for b in range(1, p):
+            for c in range(1, p):
+                if (a**2 + b**2 == c**2) and (a + b + c == p) and (a <= b) and (b<c):
+                    temp += 1          
+    return temp
     pass
 
 def test3():
@@ -60,13 +79,22 @@ def test3():
     tc.assertEqual(integer_right_triangles(60), 2)
     tc.assertEqual(integer_right_triangles(100), 0)
     tc.assertEqual(integer_right_triangles(180), 3)
-
+so i
 #################################################################################
 # EXERCISE 4
 #################################################################################
 
 # implement this function
 def gen_pattern(chars):
+    backwards = chars[::-1]
+    temp = ""
+    length = (1+(len(chars)-1)*4)
+    for x in range(1, 2+(len(chars)-1)*2):
+        temp = backwards[:x] + chars[len(chars))-x+1:]
+        if (x > len(chars)):
+            y = (2*len(chars)-x)
+            temp = backwards[:x] + chars[len(chars))-x+1:]
+        print(".".join(temp).center(length,"."))
     pass
 
 def test4():
