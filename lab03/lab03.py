@@ -9,25 +9,29 @@ S = TypeVar('S')
 # EXERCISE 1
 #################################################################################
 def mysort(lst: List[T], compare: Callable[[T, T], int]) -> List[T]:
-    """
-    This method should sort input list lst of elements of some type T.
-
-    Elements of the list are compared using function compare that takes two
-    elements of type T as input and returns -1 if the left is smaller than the
-    right element, 1 if the left is larger than the right, and 0 if the two
-    elements are equal.
-    """
-    pass
+    for i in range[len(lst-1)]:
+        if(compare(lst[i-1], lst [i]) = 1 ):
+            lst[i-1] , lst[i] = lst[i] , lst[i-1]
+        else:
+            break
+    return lst[]
 
 def mybinsearch(lst: List[T], elem: S, compare: Callable[[T, S], int]) -> int:
-    """
-    This method search for elem in lst using binary search.
+    midpoint = 0
+    start = 0
+    index = 0 
+    endpoint = len(lst)
+    while(start<=endpoint):
+        index+=1
+        midpoint = (start + endpoint) //2
 
-    The elements of lst are compared using function compare. Returns the
-    position of the first (leftmost) match for elem in lst. If elem does not
-    exist in lst, then return -1.
-    """
-    pass
+        if S== lst[midpoint]:
+            return midpoint
+        if S < lst[midpoint]:
+            endpoint = midpoint -1
+        else:
+            start = mid + 1
+    return -1
 
 class Student():
     """Custom class to test generic sorting and searching."""
@@ -108,21 +112,20 @@ def test1_5():
 class PrefixSearcher():
 
     def __init__(self, document, k):
-        """
-        Initializes a prefix searcher using a document and a maximum
-        search string length k.
-        """
-        pass
-
+        self.documnent = document
+        self.k = k
+        
     def search(self, q):
-        """
-        Return true if the document contains search string q (of
-
-        length up to n). If q is longer than n, then raise an
-        Exception.
-        """
-        pass
-
+        temp = []
+        for i in range[len(document-1)]:
+            if(i = ((document-1)-k)):
+                k = k-1
+                temp[i] = document[i:i+k]
+        for i in range[len(temp-1)]:
+            if(q = temp[i]):
+                return true
+        return false
+        
 # 30 Points
 def test2():
     print("#" * 80 + "\nSearch for substrings up to length n")
@@ -167,7 +170,7 @@ class SuffixArray():
 
 
     def positions(self, searchstr: str):
-        """
+         """
         Returns all the positions of searchstr in the documented indexed by the suffix array.
         """
         pass
